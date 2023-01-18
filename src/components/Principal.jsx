@@ -1,41 +1,44 @@
-import React from "react";
-import { Botoes, DivFundo, Entrada, FundoBotoes, FundoCalculadora } from "./style";
+import React, { useState } from "react";
+import {
+  Botoes,
+  DivFundo,
+  Entrada,
+  FundoBotoes,
+  FundoCalculadora,
+} from "./style";
 
 function Principal() {
+  const [valor, setValor] = useState(0);
 
-  
   return (
     <div>
       <DivFundo altura={window.innerHeight} largura={window.innerWidth}>
-          <FundoCalculadora>
-            <Entrada>
-
-            </Entrada>
-            <FundoBotoes>
-                <Botoes>%</Botoes>
-                <Botoes>CE</Botoes>
-                <Botoes>C</Botoes>
-                <Botoes>:</Botoes>
-                <Botoes>9</Botoes>
-                <Botoes>8</Botoes>
-                <Botoes>7</Botoes>
-                <Botoes>x</Botoes>
-                <Botoes>6</Botoes>
-                <Botoes>5</Botoes>
-                <Botoes>4</Botoes>
-                <Botoes>-</Botoes>
-                <Botoes>1</Botoes>
-                <Botoes>2</Botoes>
-                <Botoes>3</Botoes>
-                <Botoes>+</Botoes>
-                <Botoes>+/-</Botoes>
-                <Botoes>0</Botoes>
-                <Botoes>,</Botoes>
-                <Botoes>=</Botoes>
-            </FundoBotoes>
-          </FundoCalculadora>
+        <FundoCalculadora>
+          <Entrada>{valor}</Entrada>
+          <FundoBotoes>
+            <Botoes onClick={() => setValor(valor + "%")}>%</Botoes>
+            <Botoes onClick={() => setValor(0)}>CE</Botoes>
+            <Botoes onClick={() => setValor(0)}>C</Botoes>
+            <Botoes>:</Botoes>
+            <Botoes onClick={() => setValor(valor + "9")}>9</Botoes>
+            <Botoes onClick={() => setValor(valor + "8")}>8</Botoes>
+            <Botoes onClick={() => setValor(valor + "7")}>7</Botoes>
+            <Botoes onClick={() => setValor(valor + "*")}>x</Botoes>
+            <Botoes onClick={() => setValor(valor + "6")}>6</Botoes>
+            <Botoes onClick={() => setValor(valor + "5")}>5</Botoes>
+            <Botoes onClick={() => setValor(valor + "4")}>4</Botoes>
+            <Botoes onClick={() => setValor(valor + "-")}>-</Botoes>
+            <Botoes onClick={() => setValor(valor + "1")}>1</Botoes>
+            <Botoes onClick={() => setValor(valor + "2")}>2</Botoes>
+            <Botoes onClick={() => setValor(valor + "3")}>3</Botoes>
+            <Botoes onClick={() => setValor(valor + "+")}>+</Botoes>
+            <Botoes onClick={() => setValor(valor + "-")}>+/-</Botoes>
+            <Botoes onClick={() => setValor(valor + "0")}>0</Botoes>
+            <Botoes onClick={() => setValor(valor + ",")}>,</Botoes>
+            <Botoes onClick={() => setValor(valor + "=")}>=</Botoes>
+          </FundoBotoes>
+        </FundoCalculadora>
       </DivFundo>
-      
     </div>
   );
 }
